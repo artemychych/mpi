@@ -16,6 +16,8 @@ int main(int argc, char *argv[]) {
     next = (rank + 1) % size;
     prev = (rank + size - 1) % size;
 
+    printf("Rank: %d, Size: %d\n", rank, size);
+
     if (rank == 0) {
         srand(time(NULL));
         message = rand() % 100;
