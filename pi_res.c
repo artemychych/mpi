@@ -18,14 +18,13 @@ int main(int argc, char *argv[]) {
     N_per_process = GLOBAL_N / size;
     if (N_per_process * size != GLOBAL_N) {
         if (rank == 0) {
-            fprintf(stderr, "ERror: GLOBAL_N should by n_per_proc.\n");
+            fprintf(stderr, "Error: GLOBAL_N should by n_per_proc.\n");
         }
         MPI_Abort(MPI_COMM_WORLD, 1);
     }
 
     h = 1.0 / GLOBAL_N;
     double start_x = rank * (1.0 / size);
-
     double local_sum = 0.0;
 
     MPI_Barrier(MPI_COMM_WORLD);

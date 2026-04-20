@@ -40,6 +40,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     N = atoi(argv[1]);
+    
     if (N % size != 0) {
         if (rank == 0)
             fprintf(stderr, "Error: matrix size must be divisible by number of processes.\n");
